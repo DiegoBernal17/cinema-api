@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --entry ./app/public/js/index.js --output-filename bundle.min.js --output-path ./app/public/js ",
+    "start": "./node_modules/nodemon/bin/nodemon.js --exec babel-node server.js",
+    "sequelize-skeleton": "./node_modules/sequelize-cli/lib/sequelize init:models; ./node_modules/sequelize-cli/lib/sequelize init:config",
+    "init-db": "echo 'DROP DATABASE IF EXISTS cinemasdb; CREATE DATABASE cinemasdb CHARACTER SET utf8 COLLATE utf8_general_ci' | mysql -u root -p"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-server-express": "^2.5.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "graphql": "^14.3.0",
+    "graphql-tag": "^2.10.1",
+    "js2xmlparser": "^4.0.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "nodemon": "^1.19.0",
+    "sequelize-cli": "^5.4.0",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
